@@ -5,8 +5,8 @@ const Detail = () => {
     <div className="workout-detail">
       <table>
         <thead>
-          <tr>
-            <th>Monday</th>
+          <tr id="day">
+            <th colSpan="4">Monday</th>
           </tr>
           <tr>
             <th>Workout</th>
