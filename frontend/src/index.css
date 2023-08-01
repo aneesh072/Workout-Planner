@@ -1,0 +1,21 @@
+body {
+  background-color: lavenderblush;
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+}
+
+.workout-detail {
+  width: 75%;
+  padding: 10px;
+  background-color: aquamarine;
+}
+
+.workout-form {
+  width: 25%;
+  background-color: goldenrod;
+  padding: 10px;
+}
