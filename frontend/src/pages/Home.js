@@ -17,11 +17,22 @@ const Home = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setWorkouts((prevWorkouts) => [...prevWorkouts, formData]);
+    /*     setWorkouts((prevWorkouts) => [...prevWorkouts, formData]);
     // Clear the form fields after submission
-    setFormData({ load: '', title: '', sets: '', reps: '' });
+    setFormData({ load: '', title: '', sets: '', reps: '' }); */
+
+    const response = await fetch('/api/workouts', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const json = await response.json();
+    console.log(json);
+    return json;
   };
   return (
     <div>

@@ -5,7 +5,12 @@ const WorkoutForm = ({ handleChange, handleSubmit, formData }) => {
     <div className="workout-form">
       <form onSubmit={handleSubmit}>
         <label>Day:</label>
-        <select value={formData.day} name="day" onChange={handleChange}>
+        <select
+          value={formData.day}
+          name="day"
+          onChange={handleChange}
+          defaultValue="Monday"
+        >
           <option value="Monday">Monday</option>
           <option value="Tuesday">Tuesday</option>
           <option value="Wednesday">Wednesday</option>

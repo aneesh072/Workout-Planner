@@ -11,6 +11,6 @@ const router = express.Router();
 router.get('/', getWorkouts);
 
 //Create a new workout
-router.get('/', createWorkout);
+router.post('/', createWorkout);
 
 module.exports = router;
