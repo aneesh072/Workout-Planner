@@ -1,12 +1,11 @@
 import React from 'react';
 
-const WorkoutForm = () => {
+const WorkoutForm = ({ handleChange, handleSubmit, formData }) => {
   return (
     <div className="workout-form">
-      <form>
-        <h3>Add a new workout</h3>
+      <form onSubmit={handleSubmit}>
         <label>Day:</label>
-        <select name="days" id="days">
+        <select value={formData.day} name="day" onChange={handleChange}>
           <option value="Monday">Monday</option>
           <option value="Tuesday">Tuesday</option>
           <option value="Wednesday">Wednesday</option>
@@ -17,16 +16,40 @@ const WorkoutForm = () => {
         </select>
 
         <label>Workout</label>
-        <input type="text" />
+        <input
+          type="text"
+          name="title"
+          value={formData.title}
+          onChange={handleChange}
+          required="true"
+        />
 
         <label>Load</label>
-        <input type="text" />
+        <input
+          type="text"
+          name="load"
+          value={formData.load}
+          onChange={handleChange}
+          required="true"
+        />
 
         <label>Sets</label>
-        <input type="text" />
+        <input
+          type="text"
+          name="sets"
+          value={formData.sets}
+          onChange={handleChange}
+          required="true"
+        />
 
         <label>Reps</label>
-        <input type="text" />
+        <input
+          type="text"
+          name="reps"
+          value={formData.reps}
+          onChange={handleChange}
+          required="true"
+        />
 
         <button>Add</button>
       </form>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Detail = () => {
+const Detail = ({ workouts }) => {
   return (
     <div className="workout-detail">
       <table>
@@ -16,12 +16,14 @@ const Detail = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Flat Bench Press</td>
-            <td>40</td>
-            <td>4</td>
-            <td>10</td>
-          </tr>
+          {workouts.map((workout, i) => (
+            <tr key={i}>
+              <td>{workout.title}</td>
+              <td>{workout.load}</td>
+              <td>{workout.sets}</td>
+              <td>{workout.reps}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
